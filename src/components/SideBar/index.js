@@ -1,4 +1,11 @@
-import { VStack, Text, Image, HStack, Box } from "@chakra-ui/react";
+import {
+  VStack,
+  Text,
+  Image,
+  HStack,
+  Box,
+  CloseButton,
+} from "@chakra-ui/react";
 import logo from "../../assets/logo.png";
 import {
   ActivityIcon,
@@ -11,7 +18,7 @@ import {
   SetIcon,
 } from "../../styles/icons";
 
-const SideBar = () => {
+const SideBar = ({ onClose }) => {
   const fontWeightSideBarTextHeaders = { fontWeight: 600, fontSize: "14px" };
   const marginLeftSideBarContent = { pl: "45px" };
   const sideBarText = {
@@ -27,8 +34,21 @@ const SideBar = () => {
       bg="rgb(234,234,234)"
       backdropFilter="blur(20px)"
       h="100%"
+      pos="relative"
     >
-      <Image src={logo} ml="40px" mt="40px" mb="50px" />
+      <Box
+        pos="absolute"
+        right="0px"
+        m="10px"
+        display={{ sm: "block", md: "none" }}
+        onClick={onClose}
+      >
+        <CloseButton />
+      </Box>
+      <Box pl="40px" pt="40px" pb="50px">
+        <Image src={logo} />
+      </Box>
+
       <Box {...marginLeftSideBarContent}>
         <Text mb="13px" {...fontWeightSideBarTextHeaders}>
           Main Pages

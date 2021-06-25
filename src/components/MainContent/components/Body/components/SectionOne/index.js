@@ -1,4 +1,4 @@
-import { VStack, HStack, Text, StackDivider } from "@chakra-ui/react";
+import { VStack, HStack, Text, StackDivider, Stack } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 const SectionOne = () => {
   const cardHeader = {
@@ -20,13 +20,14 @@ const SectionOne = () => {
     color: "#2A2A2A",
   };
   return (
-    <HStack
-      w="685px"
+    <Stack
+      w={{ lg: "685px" }}
       align="start"
       border="1px solid #EBEBEB"
       borderRadius="10px"
+      direction={{ sm: "column", md: "row" }}
     >
-      <VStack align="start" w="385px" p="20px">
+      <VStack align="start" w={{ lg: "385px", sm: "100%" }} p="20px">
         <HStack justify="space-between" w="100%">
           <Text color="rgba(44, 102, 93, 1)" {...cardHeader}>
             Total account balance
@@ -81,7 +82,7 @@ const SectionOne = () => {
         </Text>
         <Text {...amountTextStyle}>$5,332.18</Text>
       </VStack>
-    </HStack>
+    </Stack>
   );
 };
 export default SectionOne;

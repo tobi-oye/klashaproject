@@ -27,7 +27,11 @@ const SectionTwo = () => {
     letterSpacing: "0.1px",
   };
   return (
-    <VStack w="100%">
+    <VStack
+      w={{ md: "100%", sm: "300px" }}
+      overflowX={{ sm: "auto", md: "none" }}
+      whiteSpace="nowrap"
+    >
       <HStack justify="space-between" w="100%" mb="20px">
         <Text {...headerStyle}>Payout table</Text>
         <HStack spacing="13px">
@@ -47,25 +51,25 @@ const SectionTwo = () => {
         </HStack>
       </HStack>
 
-      <HStack
-        justify="space-between"
-        w="100%"
-        bg="#F5F5F5"
-        px="25px"
-        py="15px"
-        borderRadius="5px"
-      >
-        <Text {...headerTableTextStyle}>Payout ID</Text>
-        <Text {...headerTableTextStyle}>Source</Text>
-        <Text {...headerTableTextStyle}>Date</Text>
-        <Text {...headerTableTextStyle}>Amount</Text>
-      </HStack>
       <VStack
         divider={<StackDivider borderColor="gray.200" />}
         spacing="10px"
         align="stretch"
         w="100%"
       >
+        <HStack
+          justify="space-between"
+          w={{ md: "100%", sm: "700px" }}
+          bg="#F5F5F5"
+          px="25px"
+          py="15px"
+          borderRadius="5px"
+        >
+          <Text {...headerTableTextStyle}>Payout ID</Text>
+          <Text {...headerTableTextStyle}>Source</Text>
+          <Text {...headerTableTextStyle}>Date</Text>
+          <Text {...headerTableTextStyle}>Amount</Text>
+        </HStack>
         {tableData.map(({ payoutId, source, date, amount }) => {
           return (
             <HStack justify="space-between" w="100%" py="20px">

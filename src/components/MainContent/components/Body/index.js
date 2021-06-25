@@ -4,9 +4,9 @@ const SectionBody = () => {
   return (
     <>
       <SectionOne />
+
       <SectionTwo />
     </>
   );
 };
-
 export default SectionBody;
