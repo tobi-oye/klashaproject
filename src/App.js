@@ -27,8 +27,11 @@ function App() {
         blockScrollOnMount={false}
       >
         <DrawerOverlay />
+
         <DrawerContent>
-          <SideBar onClose={onClose} />
+          <Box minH="100vh" overflowY="auto" bg="rgb(234,234,234)">
+            <SideBar onClose={onClose} />
+          </Box>
         </DrawerContent>
       </Drawer>
 
