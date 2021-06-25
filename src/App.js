@@ -24,6 +24,7 @@ function App() {
         placement="left"
         onClose={onClose}
         finalFocusRef={btnRef}
+        blockScrollOnMount={false}
       >
         <DrawerOverlay />
         <DrawerContent>
